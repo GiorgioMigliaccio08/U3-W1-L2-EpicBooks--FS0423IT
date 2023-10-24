@@ -10,14 +10,6 @@ import Welcome from "./components/Welcome";
 // Importo i miei libbri
 import Books from "./components/AllTheBooks";
 
-//  Importo i file json dei libbri
-
-import fantasy from "../src/fantasy.json";
-import history from "../src/history.json";
-import horror from "../src/horror.json";
-import romance from "../src/romance.json";
-import scifi from "../src/scifi.json";
-
 function App() {
   return (
     <div>
