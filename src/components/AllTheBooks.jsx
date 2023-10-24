@@ -6,11 +6,11 @@ import Col from "react-bootstrap/Col";
 
 //  Importo i file json dei libbri
 
-import fantasy from "../src/fantasy.json";
-import history from "../src/history.json";
-import horror from "../src/horror.json";
-import romance from "../src/romance.json";
-import scifi from "../src/scifi.json";
+import fantasy from "../fantasy.json";
+// import history from "../src/history.json";
+// import horror from "../src/horror.json";
+// import romance from "../src/romance.json";
+// import scifi from "../src/scifi.json";
 
 const Books = function () {
   return (
