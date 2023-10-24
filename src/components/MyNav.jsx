@@ -3,8 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 const CustomNavbar = (props) => {
-  console.log("le props sono", props);
-
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -15,7 +13,6 @@ const CustomNavbar = (props) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#features">HOME</Nav.Link>
-            {/* <div class="nav-link">Menu</div> */}
             <Nav.Link href="#pricing">ABOUT</Nav.Link>
             <Nav.Link href="#pricing">BROWSE</Nav.Link>
           </Nav>
