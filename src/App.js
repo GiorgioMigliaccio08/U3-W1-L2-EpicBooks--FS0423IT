@@ -9,6 +9,7 @@ import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
 // Importo i miei libbri
 import Books from "./components/AllTheBooks";
+import SingoloLibbro from "./components/SingleBook";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <CustomNavbar additionalText="I migliori libbri del web!" />
       <Welcome />
       <Books />
+      <SingoloLibbro />
       <MyFooter />
     </div>
   );
