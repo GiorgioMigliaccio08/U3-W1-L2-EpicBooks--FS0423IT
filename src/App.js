@@ -10,6 +10,7 @@ import Welcome from "./components/Welcome";
 // Importo i miei libbri
 import Books from "./components/AllTheBooks";
 import SingoloLibbro from "./components/SingleBook";
+import BookList from "./components/BookList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Welcome />
       <Books />
       <SingoloLibbro />
+      <BookList />
       <MyFooter />
     </div>
   );
