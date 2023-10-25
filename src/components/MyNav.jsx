@@ -13,6 +13,7 @@ const CustomNavbar = (props) => {
             <Nav.Link href="#features">HOME</Nav.Link>
             <Nav.Link href="#pricing">ABOUT</Nav.Link>
             <Nav.Link href="#pricing">BROWSE</Nav.Link>
+            <Nav.Link href="#pricing">SEARCH BOOK</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
