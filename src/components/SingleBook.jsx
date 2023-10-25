@@ -1,24 +1,31 @@
-import book from "../fantasy.json";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Component } from "react";
+import { Card } from "react-bootstrap";
 
-const SingoloLibbro = (prop) => {
-  prop = book[1];
-  return (
-    <div>
-      <Container>
-        <Row>
-          <Col sm={12} md={6} xl={2} key={prop.asin}>
-            <Card>
-              <Card.Img variant="top" src={prop.img} />
-              <Card.Body>
-                <Card.Title> {prop.title} </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
-};
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
 
-export default SingoloLibbro;
+  toggleSelected = () => {
+    this.setState({
+      selected: !this.state.selected,
+    });
+  };
+
+  render() {
+    return (
+      <Card className={this.state.selected ? "red-border" : ""}>
+        <Card.Img
+          variant="top"
+          src={this.props.book.img}
+          onClick={this.toggleSelected}
+        />
+        <Card.Body>
+          <Card.Title>{this.props.book.title}</Card.Title>
+        </Card.Body>
+      </Card>
+    );
+  }
+}
+
+export default SingleBook;
