@@ -1,6 +1,7 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 import { Component } from "react";
+import CommentArea from "./CommentArea"
 
 class BookList extends Component {
   state = {
@@ -41,6 +42,7 @@ class BookList extends Component {
               );
             })}
         </Row>
+        <Col> <CommentArea/> </Col>
       </Container>
     );
   }
