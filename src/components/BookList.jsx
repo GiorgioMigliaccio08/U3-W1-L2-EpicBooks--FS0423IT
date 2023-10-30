@@ -1,49 +1,49 @@
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 import { Component } from "react";
-import CommentArea from "./CommentArea"
+import CommentArea from "./CommentArea";
 
 class BookList extends Component {
   state = {
-    searchValue: "",
+    searchQuery: "",
+    elementId: "",
+  };
+
+  changeBook = (element) => {
+    this.setState({ elementId: element });
   };
 
   render() {
     return (
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={6}>
-            <Form.Group className="mb-3">
+      <>
+        <Row className="justify-content-center mt-5">
+          <Col xs={12} md={4} className="text-center">
+            <Form.Group>
               <Form.Control
-                type="text"
-                placeholder="Cerca un libro..."
-                value={this.state.searchValue}
-                onChange={(e) => {
-                  this.setState({
-                    searchValue: e.target.value,
-                  });
-                }}
+                type="search"
+                placeholder="Cerca un libro"
+                value={this.state.searchQuery}
+                onChange={(e) => this.setState({ searchQuery: e.target.value })}
               />
             </Form.Group>
           </Col>
         </Row>
-        <Row>
-          {this.props.manyBooks
-            .filter((oneBook) =>
-              oneBook.title
-                .toLowerCase()
-                .includes(this.state.searchValue.toLowerCase())
+        <Row className="g-2 mt-3">
+          {this.props.books
+            .filter((b) =>
+              b.title.toLowerCase().includes(this.state.searchQuery)
             )
-            .map((oneBook) => {
-              return (
-                <Col md={3} key={oneBook.asin}>
-                  <SingleBook book={oneBook} />
-                </Col>
-              );
-            })}
+            .map((b) => (
+              <Col xs={12} md={4} key={b.asin}>
+                <SingleBook book={b} elements={this.changeBook} />
+              </Col>
+            ))}
+          <Col>
+            {" "}
+            <CommentArea book={this.state.elementId} />
+          </Col>
         </Row>
-        <Col> <CommentArea/> </Col>
-      </Container>
+      </>
     );
   }
 }
