@@ -1,5 +1,8 @@
+import { Component } from "react";
 import CommentList from "./CommentList";
 import AddComment from "./AddComment";
+import Loading from "./Loading";
+import Error from "./Error";
 
 import { col, Container, Row } from "react-bootstrap";
 
@@ -10,8 +13,9 @@ class CommentArea extends Component {
   getComments = async () => {
     try {
       const res = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/" +
-          this.props.bookId,
+        "https://striveschool-api.herokuapp.com/api/comments/" + 
+        this.props.book,
+         
         {
           headers: {
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNmY2E1MmIzOTczNDAwMTRkNWU4YWEiLCJpYXQiOjE2OTg2NzkzNzgsImV4cCI6MTY5OTg4ODk3OH0.CpKHHQjws_-p72np_BCFPrAyPYZVffy1j0od114G-hc"
