@@ -14,7 +14,7 @@ class CommentArea extends Component {
           this.props.bookId,
         {
           headers: {
-            Authorization: keyApi,
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNmY2E1MmIzOTczNDAwMTRkNWU4YWEiLCJpYXQiOjE2OTg2NzkzNzgsImV4cCI6MTY5OTg4ODk3OH0.CpKHHQjws_-p72np_BCFPrAyPYZVffy1j0od114G-hc"
           },
         }
       );
