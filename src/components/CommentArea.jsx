@@ -1,12 +1,10 @@
-import { Component } from "react";
-import CommentsList from "./CommentsList";
+import { Component, useState } from "react";
+import CommentsList from "./CommentsList ";
 import AddComment from "./AddComment";
 
-class CommentArea extends Component {
-  state = {
-    comments: [],
-  };
-
+const CommentArea =({bookId}) => {
+ 
+const [comments, setComments] = useState ([])
   // lo commento perchè all'avvio non ci sarà mai più bisogno di invocare getComments!
   // lo devo fare ora OGNI VOLTA che cambio il libro selezionato...
   // componentDidMount = () => {
@@ -25,11 +23,12 @@ class CommentArea extends Component {
       this.getComments();
     }
   }
+  
 
-  getComments = () => {
+ const getComments = () => {
     fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" +
-        this.props.bookId,
+        bookId,
       {
         headers: {
           Authorization:
@@ -46,27 +45,26 @@ class CommentArea extends Component {
       })
       .then((arrayOfComments) => {
         console.log(arrayOfComments);
-        this.setState({
-          comments: arrayOfComments,
-        });
+       
+        setComments(arrayOfComments)
       })
       .catch((err) => {
         console.log("error", err);
       });
   };
 
-  render() {
+ 
     return (
       <div>
         <div>
-          <CommentsList reviews={this.state.comments} />
+          <CommentsList reviews={comments} />
         </div>
         <div>
-          <AddComment bookId={this.props.bookId} />
+          <AddComment bookId={bookId} />
         </div>
       </div>
     );
   }
-}
+
 
 export default CommentArea;
