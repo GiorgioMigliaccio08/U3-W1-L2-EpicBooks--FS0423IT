@@ -1,13 +1,9 @@
-const MyFooter = function () {
-  return (
-    <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div className=" d-flex justify-content-center">
-        <span className="text-dark d-flex justify-content-center">
-          © 2023 Epic Education, Inc
-        </span>
-      </div>
-    </footer>
-  );
-};
+const MyFooter = () => (
+  <footer className="d-flex bg-dark mt-2">
+    <span className="text-white m-auto p-2">
+      <strong>EPICODE</strong> - Copyright {new Date().getFullYear()}
+    </span>
+  </footer>
+);
 
 export default MyFooter;
